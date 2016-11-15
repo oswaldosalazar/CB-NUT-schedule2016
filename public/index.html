@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html ng-app lang="en">
+<html ng-app="cbaNutApp" lang="en">
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
         <title>OS</title>
+        <link href="https://fonts.googleapis.com/css?family=Palanquin" rel="stylesheet">
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
         <script src="https://use.fontawesome.com/61fcf817fd.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -12,15 +13,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
         <link rel="stylesheet" href="./stylesheets/style.css" media="screen" title="no title" type = "text/css">
-
     </head>
     <body >
-
         <div ng-cloak>
 
         </div>
-        <main>
-          <h1>Hello world</h1>
+        <main ng-controller="mainCtrl as vm">
+          <h1>{{ vm.text }}</h1>
+          <h2>{{ vm.number }}</h2>
         </main>
 
         <script src="./javascripts/app.js"></script>
