@@ -19,10 +19,11 @@
 
         </div>
         <main ng-controller="mainCtrl as vm">
-          <h1>{{ vm.text }}</h1>
-          <h2>{{ vm.number }}</h2>
+          <h4 ng-repeat="student in vm.students"> {{ student.name }}</h4>
         </main>
 
         <script src="./javascripts/app.js"></script>
+        <script src="./javascripts/controllers/mainCtrl.js"></script>
+        <script src="./javascripts/services/students_service.js"></script>
     </body>
 </html>
