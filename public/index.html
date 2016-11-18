@@ -2,9 +2,9 @@
 <html ng-app="cbaNutApp" lang="en">
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-        <title>OS</title>
+        <title>CBA</title>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
         <link href="https://fonts.googleapis.com/css?family=Palanquin" rel="stylesheet">
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
         <script src="https://use.fontawesome.com/61fcf817fd.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
@@ -14,12 +14,32 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
         <link rel="stylesheet" href="./stylesheets/style.css" media="screen" title="no title" type = "text/css">
     </head>
-    <body >
-        <div ng-cloak>
-
-        </div>
+    <body ng-cloak>
         <main ng-controller="mainCtrl as vm">
-          <h4 ng-repeat="student in vm.students"> {{ student.name }}</h4>
+
+          <md-input-container>
+            <label>Cast</label>
+            <md-select ng-model="vm.selectedCast.cast">
+              <md-option><em>None</em></md-option>
+              <md-option ng-repeat="cast in vm.casts" ng-value="cast">
+                {{ cast }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container>
+            <label>Scene</label>
+            <md-select ng-model="vm.selectedScene.scene">
+              <md-option><em>None</em></md-option>
+              <md-option ng-repeat="scene in vm.scenes" ng-value="scene">
+                {{ scene }}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+          <div ng-repeat="student in vm.students | filter:vm.selectedCast | filter:vm.selectedScene">
+            <h5>{{ student.name }} Student ID: {{ student.student_id }} Cast: {{ student.cast }} Scene: {{ student.scene }}</h5>
+          </div>
         </main>
 
         <script src="./javascripts/app.js"></script>

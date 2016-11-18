@@ -1,1 +1,1 @@
-var app = angular.module('cbaNutApp',['ngRoute']);
+var app = angular.module('cbaNutApp',['ngRoute', 'ngMaterial']);
