@@ -13,6 +13,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var students = require('./routes/students');
 var performances = require('./routes/performances');
+var performancesStudents = require('./routes/performancesStudents');
 
 var app = express();
 
@@ -38,9 +39,10 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/api/students', students);
 app.use('/api/performances', performances);
+app.use('/api/performancesStudents', performancesStudents);
 
 app.use('/*', function(req, res){
-  res.sendfile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 // catch 404 and forward to error handler

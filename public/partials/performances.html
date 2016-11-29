@@ -1,23 +1,4 @@
 <main ng-controller="performanceCtrl as vm">
-
-  <!-- <md-input-container>
-    <label>Cast</label>
-    <md-select ng-model="vm.selectedCast.cast">
-      <md-option><em>None</em></md-option>
-      <md-option ng-repeat="cast in vm.casts" ng-value="cast">
-        {{ cast }}
-      </md-option>
-    </md-select>
-  </md-input-container>
-
-  <md-input-container>
-    <label>Scene</label>
-    <md-select ng-model="vm.selectedScene.scene">
-      <md-option><em>None</em></md-option>
-      <md-option ng-repeat="scene in vm.scenes" ng-value="scene">
-        {{ scene }}
-      </md-option>
-    </md-select> -->
   </md-input-container>
   <div ng-repeat="performance in vm.performances">
     <h5>{{ performance.dateTime }} Cast {{ performance.cast }}</h5>
