@@ -14,6 +14,7 @@ var users = require('./routes/users');
 var students = require('./routes/students');
 var performances = require('./routes/performances');
 var performancesStudents = require('./routes/performancesStudents');
+var saved = require('./routes/saved');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use('/users', users);
 app.use('/api/students', students);
 app.use('/api/performances', performances);
 app.use('/api/performancesStudents', performancesStudents);
+app.use('/api/saved', saved);
 
 app.use('/*', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
