@@ -14,4 +14,6 @@ function updateSaved(body) {
 
 module.exports = {
   getSaved:getSaved
+  postSaved:postSaved
+  updateSaved:updateSaved
 };
