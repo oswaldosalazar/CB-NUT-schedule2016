@@ -5,11 +5,11 @@ function getSaved(user_id) {
 }
 
 function postSaved(body) {
-  return knex('saved').insert({user_id: body.userId, saved_list: body.saveList })
+  return knex('saved').insert({user_id: body.user_id, saved_list: body.saved_list })
 }
 
 function updateSaved(body) {
-  return knex('saved').where({id: body.id}).update({saved_list: body.saveList })
+  return knex('saved').where({id: body.id}).update({saved_list: body.saved_list })
 }
 
 function deleteSaved(id) {
