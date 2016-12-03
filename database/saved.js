@@ -19,5 +19,6 @@ function deleteSaved(id) {
 module.exports = {
   getSaved:getSaved,
   postSaved:postSaved,
-  updateSaved:updateSaved
+  updateSaved:updateSaved,
+  deleteSaved:deleteSaved
 };
