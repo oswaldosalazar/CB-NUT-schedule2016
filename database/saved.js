@@ -9,7 +9,7 @@ function postSaved(body) {
 }
 
 function updateSaved(body) {
-  return knex('saved').where({userId: body.userId}).update({savedList: body.savedList })
+  return knex('saved').where({id: body.id}).update({savedList: body.savedList })
 }
 
 module.exports = {
