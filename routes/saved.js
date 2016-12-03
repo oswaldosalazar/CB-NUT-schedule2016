@@ -31,6 +31,7 @@ router.post('/', function(req, res, next) {
   }
   saved.postSaved(req.body)
   .then( (data) => {
+    console.log(data);
     res.json({message: 'New data saved'});
   })
   .catch( (err) => {
