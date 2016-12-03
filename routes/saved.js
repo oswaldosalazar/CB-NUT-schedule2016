@@ -61,7 +61,7 @@ router.delete('/', function(req, res, next) {
 
  queries.deleteSaved(req.query.id)
     .then((results) => {
-      res.jason({message: 'Saved deleted.'});
+      res.json({message: 'Saved deleted.'});
     })
     .catch((err) => {
       res.send(oops);
