@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
     next(err);
     return;
   }
-  saved.getSaved(req.query.id)
+  saved.getSaved(req.query.user_id)
   .then( (data) => {
     res.send(data)
   })

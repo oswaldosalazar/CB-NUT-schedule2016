@@ -1,7 +1,7 @@
 var knex = require('./config');
 
-function getSaved(id) {
-  return knex('saved').where({user_id: id})
+function getSaved(user_id) {
+  return knex('saved').where({user_id: user_id})
 }
 
 function postSaved(body) {
