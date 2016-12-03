@@ -58,7 +58,7 @@ router.put('/', function(req, res, next) {
 
 router.delete('/', function(req, res, next) {
 
- queries.deleteSaved(req.body)
+ queries.deleteSaved(req.query.id)
     .then((results) => {
       res.jason({message: 'Saved deleted.'});
     })
