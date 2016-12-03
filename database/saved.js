@@ -1,15 +1,15 @@
 var knex = require('./config');
 
 function getSaved(id) {
-  return knex('saved').where({userId: id})
+  return knex('saved').where({user_id: id})
 }
 
 function postSaved(body) {
-  return knex('saved').insert({userId: body.userId, savedList: body.savedList })
+  return knex('saved').insert({user_id: body.userId, saved_list: body.saveList })
 }
 
 function updateSaved(body) {
-  return knex('saved').where({id: body.id}).update({savedList: body.savedList })
+  return knex('saved').where({id: body.id}).update({saved_list: body.saveList })
 }
 
 function deleteSaved(id) {
