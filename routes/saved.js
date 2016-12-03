@@ -58,8 +58,13 @@ router.put('/', function(req, res, next) {
 });
 
 router.delete('/', function(req, res, next) {
-
- queries.deleteSaved(req.query.id)
+  if (!req.query.id) {
+    var err = new Error('Bad Request');
+    err.status = 400;
+    next(err);
+    return;
+  }
+  saved.deleteSaved(req.query.id)
     .then((results) => {
       res.json({message: 'Saved deleted.'});
     })
