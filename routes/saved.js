@@ -6,7 +6,7 @@ const oops = "Something went wrong on our end.  Please try again."
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  if (!req.query.id) {
+  if (!req.query.user_id) {
     var err = new Error('Bad Request');
     err.status = 400;
     next(err);
@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  if (!(req.body.userId && req.body.savedList)) {
+  if (!(req.body.user_id && req.body.saved_list)) {
     var err = new Error('Bad Request');
     err.status = 400;
     next(err);
@@ -40,7 +40,7 @@ router.post('/', function(req, res, next) {
 });
 
 router.put('/', function(req, res, next) {
-  if (!(req.body.id && req.body.savedList)) {
+  if (!(req.body.id && req.body.saved_list)) {
     var err = new Error('Bad Request');
     err.status = 400;
     next(err);
