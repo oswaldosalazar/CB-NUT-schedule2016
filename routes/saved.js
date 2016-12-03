@@ -40,7 +40,7 @@ router.post('/', function(req, res, next) {
 });
 
 router.put('/', function(req, res, next) {
-  if (!(req.body.userId && req.body.savedList)) {
+  if (!(req.body.id && req.body.savedList)) {
     var err = new Error('Bad Request');
     err.status = 400;
     next(err);
