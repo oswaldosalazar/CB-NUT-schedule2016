@@ -56,4 +56,16 @@ router.put('/', function(req, res, next) {
   })
 });
 
+router.delete('/', function(req, res, next) {
+
+ queries.deleteSaved(req.body)
+    .then((results) => {
+      res.jason({message: 'Saved deleted.'});
+    })
+    .catch((err) => {
+      res.send(oops);
+    })
+
+});
+
 module.exports = router;

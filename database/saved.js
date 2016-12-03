@@ -12,6 +12,10 @@ function updateSaved(body) {
   return knex('saved').where({id: body.id}).update({savedList: body.savedList })
 }
 
+function deleteSaved(id) {
+  return knex('saved').where({id: id}).del()
+}
+
 module.exports = {
   getSaved:getSaved,
   postSaved:postSaved,
