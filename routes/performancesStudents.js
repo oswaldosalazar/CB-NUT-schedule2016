@@ -8,7 +8,6 @@ var student = require('../database/performanceStudent');
 router.get('/', function(req, res, next) {
   student.getPerformancesStudents()
   .then( (data) => {
-    console.log(data)
     data = _.sortBy(data, 'dateTime');
     res.send(data)
   })

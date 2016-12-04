@@ -1,4 +1,5 @@
 var express = require('express');
+var _ = require('lodash');
 var router = express.Router();
 // var request = require('request');
 var student = require('../database/performance');
@@ -7,6 +8,7 @@ var student = require('../database/performance');
 router.get('/', function(req, res, next) {
   student.getPerformances()
   .then( (data) => {
+    data = _.sortBy(data, 'dateTime');
     res.send(data)
   })
 });
